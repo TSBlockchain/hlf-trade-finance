@@ -12,7 +12,7 @@ Trade finance application on Hyperledger Fabric
 
 ## Setup API users 
 
-1. cd tfbc-api
+1. cd hlf-trade-finance/tfbc-api
 2. npm install
 3. rm hfc-key-store/*
 4. node enrollBankUser.js
@@ -148,6 +148,9 @@ http://localhost:3000/api-docs
     ]
 }
 
+## Stop the network
 
+1. cd hlf-trade-finance
+2. ./stop.sh
 
 
