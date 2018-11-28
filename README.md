@@ -27,7 +27,7 @@ Trade finance application on Hyperledger Fabric
 
 http://localhost:3000/api-docs
 
-## API Docs 
+## API definition if you want to run APIs using some rest client like Postman etc. 
 
 ### Request LC (Letter of Credit)
   1. URL -> http://localhost:3000/tfbc/requestLC
