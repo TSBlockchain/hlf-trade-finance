@@ -1,0 +1,230 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Swagger HLF Trade Finance.",
+        "version": "1.0.0",
+        "title": "Swagger HLF Trade Finance",
+        
+        "contact": {
+            "email": ""
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/tfbc",
+    
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/requestLC": {
+            "post": {
+                
+                "summary": "Request LC",
+                "description": "Request LC",
+                "operationId": "requestLC",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "LC object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/LC"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/issueLC": {
+            "post": {
+                
+                "summary": "Issue LC",
+                "description": "Issue LC",
+                "operationId": "issueLC",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "LC ID object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/LCID"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/acceptLC": {
+            "post": {
+                
+                "summary": "Accept LC",
+                "description": "Accept LC",
+                "operationId": "acceptLC",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "LC ID object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/LCID"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/getLC": {
+            "post": {
+                
+                "summary": "Get LC",
+                "description": "Get LC",
+                "operationId": "getLC",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "LC object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/LCID"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "#/definitions/LC"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value"
+                    }
+                }
+            }
+        },
+        "/getLCHistory": {
+            "post": {
+                
+                "summary": "Get LC History",
+                "description": "Get LC History",
+                "operationId": "getLCHistory",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "LC object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/LCID"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/LC"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid status value"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "LC": {
+            "type": "object",
+            "properties": {
+                "lcId": {
+                    "type": "string",
+                    "description": "LC ID"
+                },
+                "buyer": {
+                    "type": "string",
+                    "description": "Buyer ID"
+                },
+                "bank": {
+                    "type": "string",
+                    "description": "Bank ID"
+                },
+                "seller": {
+                    "type": "string",
+                    "description": "Seller ID"
+                },
+                "expiryDate": {
+                    "type": "string",
+                    "description": "LC Expiry date"
+                },
+                "amount": {
+                    "type": "string",
+                    "description": "LC Amount"
+                }
+            }
+        },
+        "LCID": {
+            "type": "object",
+            "properties": {
+                "lcId": {
+                    "type": "string",
+                    "description": "LC ID"
+                }
+            }
+        }
+    },
+    "externalDocs": {
+        "description": "Find out more about Swagger",
+        "url": "http://swagger.io"
+    }
+}
