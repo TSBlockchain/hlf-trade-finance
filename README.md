@@ -1,7 +1,7 @@
 # Trade finance on Hyperledger Fabric 
 Trade finance application on Hyperledger Fabric
 
-*** Use sudo prefix to commands if you get permission denied error execution any command, assumption is you already hav required software to run Hyperledger fabric network and node SDK *** 
+*** Use sudo prefix to commands if you get permission denied error while executing any command, assumption is you already have  required software to run Hyperledger fabric network and node SDK *** 
 
 ## Start the Hyperledger Fabric Network 
 
