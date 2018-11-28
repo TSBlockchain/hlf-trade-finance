@@ -1,39 +1,39 @@
-# hlf-trade-finance
+# Trade finance on Hyperledger Fabric 
 Trade finance application on Hyperledger Fabric
 
-# Start the Hyperledger Fabric Network 
+## Start the Hyperledger Fabric Network 
 
-cd hlf-trade-finance
-./start.sh
+1. cd hlf-trade-finance
+2. ./start.sh
 
-# Setup the Hyperledger Fabric Network
+## Setup the Hyperledger Fabric Network
 
-./setup.sh
+1. ./setup.sh
 
-# Setup API users 
+## Setup API users 
 
-cd tfbc-api
-npm install
-rm hfc-key-store/*
-node enrollBankUser.js
-node enrollBuyerUser.js
-node enrollSellerUser.js
+1. cd tfbc-api
+2. npm install
+3. rm hfc-key-store/*
+4. node enrollBankUser.js
+5. node enrollBuyerUser.js
+6. node enrollSellerUser.js
 
-# Run Node APIs
+## Run Node APIs
 
-npm start
+1. npm start
 
-# Execute APIs on Swagger UI 
+## Execute APIs on Swagger UI 
 
 http://localhost:3000/api-docs
 
-# API Docs 
+## API Docs 
 
-(1) Request LC (Letter of Credit)
-  URL -> http://localhost:3000/tfbc/requestLC
-  Http Method -> Post
-  content-type: application/json
-  Input->
+### Request LC (Letter of Credit)
+  1. URL -> http://localhost:3000/tfbc/requestLC
+  2. Http Method -> Post
+  3. content-type: application/json
+  4. Input->
   {
 	"lcId": "LC001",
 	"expiryDate": "31-Dec-2018",
@@ -42,47 +42,47 @@ http://localhost:3000/api-docs
 	"seller": "sellerUser",
 	"amount": "100000"
   }
-  Output-> 
+  5. Output-> 
   {
     "code": "200",
     "message": "LC requested successsfully."
   }
-(2) Issue LC (Letter of Credit)
+### Issue LC (Letter of Credit)
 
- URL -> http://localhost:3000/tfbc/issueLC
-  Http Method -> Post
-  content-type: application/json
-  Input->
+ 1. URL -> http://localhost:3000/tfbc/issueLC
+ 2. Http Method -> Post
+ 3. content-type: application/json
+ 4. Input->
   {
 	"lcId": "LC001"
   }
-  Output-> 
+ 5. Output-> 
   {
     "code": "200",
     "message": "LC issued successsfully."
   }
-(3) Accept LC (Letter of Credit)
- URL -> http://localhost:3000/tfbc/acceptLC
-  Http Method -> Post
-  content-type: application/json
-  Input->
+### Accept LC (Letter of Credit)
+ 1. URL -> http://localhost:3000/tfbc/acceptLC
+ 2. Http Method -> Post
+ 3. content-type: application/json
+ 4. Input->
   {
 	"lcId": "LC001"
   }
-  Output-> 
+ 5. Output-> 
   {
     "code": "200",
     "message": "LC accepted successsfully."
   }
-(4) Get LC Details 
- URL -> http://localhost:3000/tfbc/getLC
-  Http Method -> Post
-  content-type: application/json
-  Input->
-  {
+### Get LC Details 
+ 1. URL -> http://localhost:3000/tfbc/getLC
+ 2. Http Method -> Post
+ 3. content-type: application/json
+ 4. Input->
+ {
 	"lcId": "LC001"
   }
-  Output-> 
+ 5. Output-> 
   {
 	"lcId": "LC001",
 	"expiryDate": "31-Dec-2018",
@@ -91,15 +91,15 @@ http://localhost:3000/api-docs
 	"seller": "sellerUser",
 	"amount": "100000"
   }
-(5) Get LC History 
- URL -> http://localhost:3000/tfbc/getLCHistory
-  Http Method -> Post
-  content-type: application/json
-  Input->
+### Get LC History 
+ 1. URL -> http://localhost:3000/tfbc/getLCHistory
+ 2. Http Method -> Post
+ 3. content-type: application/json
+ 4. Input->
   {
 	"lcId": "LC001"
   }
-  Output-> 
+ 5. Output-> 
   {
     "code": "200",
     "data": [
