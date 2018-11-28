@@ -10,7 +10,8 @@ Trade finance application on Hyperledger Fabric
 
 ## Setup the Hyperledger Fabric Network
 
-1. ./setup.sh
+1. cd hlf-trade-finance
+2. ./setup.sh
 
 ## Setup API users 
 
@@ -23,7 +24,8 @@ Trade finance application on Hyperledger Fabric
 
 ## Run Node APIs
 
-1. npm start
+1. cd hlf-trade-finance/tfbc-api
+2. npm start
 
 ## Execute APIs on Swagger UI 
 
