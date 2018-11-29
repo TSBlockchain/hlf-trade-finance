@@ -30,6 +30,8 @@ Trade finance application on Hyperledger Fabric
 ## Execute APIs on Swagger UI 
 (Swagger allows you to describe the structure of your APIs so that machines can read them. The ability of APIs to describe their own structure is the root of all awesomeness in Swagger. Why is it so great? Well, by reading your API’s structure, we can automatically build beautiful and interactive API documentation. We can also automatically generate client libraries for your API in many languages and explore other possibilities like automated testing. Swagger does this by asking your API to return a YAML or JSON that contains a detailed description of your entire API.)
 
+- To check this application specific swagger file go to:  hlf-trade-finance/tfbc-api/swagger.json 
+
 http://localhost:3000/api-docs
 
 ## API definition if you want to run APIs using some rest client like Postman etc. 
