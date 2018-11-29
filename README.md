@@ -6,12 +6,22 @@ Trade finance application on Hyperledger Fabric
 ## Start the Hyperledger Fabric Network 
 
 1. cd hlf-trade-finance
-2. ./start.sh
+2. ./start.sh (with this you will start docker-compose.yml up -d )
 
 ## Setup the Hyperledger Fabric Network
 
 1. cd hlf-trade-finance
-2. ./setup.sh
+2. ./setup.sh (With this you will create the channel genesis block, add the peer0 to the channel created and instantiate tfbc chaincode.) 
+
+*** In this usecase CA's are already generated. 
+
+We **do not have to do** the following again:
+
+1. "../bin/cryptogen generate --config=crypto-config.yaml"
+2. "../bin/configtxgen -profile TFBCOrgOrdererGenesis -outputBlock ./config/genesis.block" 
+3. "../bin/configtxgen -profile TFBCOrgChannel -outputCreateChannelTx ./config/tfbcchannel.tx -channelID tfbcchannel". 
+
+These three statements are part of the "generate.sh" file here.  
 
 ## Setup API users 
 
